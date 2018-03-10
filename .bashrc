@@ -9,6 +9,7 @@ function pathmunge {
     fi
 }
 
+
 function ffmpeg-dv-to-mp4 {
 	cmd="ffmpeg -i $1 -c:v libx264 -c:a aac -pix_fmt yuv420p -strict experimental $2"
 	echo "running:"
