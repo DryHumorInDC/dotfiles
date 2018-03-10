@@ -1,0 +1,64 @@
+:imagesdir: assets/images
+:toc: preamble
+:toclevels: 6
+// no equivalent gitlab properties.
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+Docker Notes
+============
+
+== Using the GitLab Docker Registry
+
+Until we stand up Artifactory, we'll use GitLab's (SaaS endpoint) link:https://gitlab.com/help/user/project/container_registry[container registry].  In fact, we may want to consider using this in lieu of Artifactory to minimize the bootstrapping challenges we will face with standing up our immutable core infrastructure.
+
+.Steps:
+. Local Desktop
+.. If starting from scratch, create an link:https://gitlab.com/help/user/profile/account/two_factor_authentication#personal-access-tokens[access token] in GitLab.  NOTE: this access token most likely already exists.  You'll know it does if `docker login` (below) succeeds.
+.. Run: `docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com`, where `$CI_BUILD_TOKEN` value defined in: `s3://mlrn-devops/gitlab-runner-config/.gitlab-api-token`
+.. Assuming container id = _47c36da815d6_, Run: `docker commit 47c36da815d6 registry.gitlab.com/bti360-mlrn/mlrn-linux-desktop:v2`
+.. Note the new image now exists: `$ docker image ls|grep bti360-mlrn`
+_registry.gitlab.com/bti360-mlrn/mlrn-linux-desktop   v2                  a53801dc0642        5 minutes ago       1.22GB`_
+.. Push the newly created image to our custom registry with `docker push registry.gitlab.com/bti360-mlrn/mlrn-linux-desktop:v2`.  Looks good -- we now see the docker image in our link:https://gitlab.com/bti360-mlrn/mlrn-linux-desktop/container_registry[GitLab container registry].
+.. Now let's see if the image still has the _joeuser_ user baked in.  BTW, this is _not_ a desired state, but we would like to see if `docker commit` really does roll in the changes not covered in the _Dockerfile_.
+... 
+. CI Pipeline
+..
+
+
+
+
+== Misc Notes
+As of Ubuntu 16.04 LTS, sudo isn't installed.  Ran this to fix (so we'll bake that in later):
+
+----
+docker exec -it joeuser-desktop-01 bash -c "apt-get install -y sudo
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package sudo
+----
+
+Huh?  can't find _sudo_ package?  Need to update the package repos, so ran:
+
+`docker exec -it joeuser-desktop-01 bash -c "apt-get update -y"`
+
+Now we can resolve the _sudo_ package:
+
+`docker exec -it joeuser-desktop-01 bash -c "apt-get install -y sudo`
+
+
+
+
+
+
+
+
+
+
+docker run -it --entrypoint /bin/sh registry.gitlab.com/bti360-mlrn/aws-cli:latest
