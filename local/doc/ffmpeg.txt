@@ -1,0 +1,26 @@
+
+
+#-----------------------------------------------------------------------
+# To convert a mounted (VIDEO_TS) ISO image file to h.265 mp4:
+#-----------------------------------------------------------------------
+ffmpeg -i concat:"VTS_01_0.VOB|VTS_01_1.VOB|VTS_01_2.VOB|VTS_01_3.VOB|VTS_01_4.VOB|VTS_01_5.VOB" \
+	-c:v libx265 -crf 21 -c:a aac -b:a 128k -f mp4 -pix_fmt yuv420p \
+	-tag:v hvc1 -movflags faststart JJ.mp4
+
+#-----------------------------------------------------------------------
+# To convert an ISO image file to h.265 mp4:
+#-----------------------------------------------------------------------
+ffmpeg -i concat:"VTS_01_0.VOB|VTS_01_1.VOB|VTS_01_2.VOB|VTS_01_3.VOB|VTS_01_4.VOB|VTS_01_5.VOB" \
+	-c:v libx265 -crf 21 -c:a aac -b:a 128k -f mp4 -pix_fmt yuv420p \
+	-tag:v hvc1 -movflags faststart JJ.mp4
+
+#-----------------------------------------------------------------------
+# To convert DV files h.264 mp4 for cloud-friendly access
+#-----------------------------------------------------------------------
+ffmpeg -i $1 -c:v libx264 -c:a aac -pix_fmt yuv420p -strict experimental $2
+
+
+
+
+
+

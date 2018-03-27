@@ -19,12 +19,15 @@ function ffmpeg-dv-to-mp4 {
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+#[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+#[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
 
 alias downandup='cdmlrn && ./gradlew restartDev && cd -'
 
 
-PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+pathmunge "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+pathmunge ~/bin
+alias ll='ls -ls'
+alias lrt='ls -lsrt'

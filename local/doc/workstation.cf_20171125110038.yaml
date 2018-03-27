@@ -1,0 +1,146 @@
+Parameters:
+  Username:
+    Default: joeuser
+    Description: Login username for the workstation
+    Type: String
+  KeyPairName:
+    Default: mlrn-linux-desktop-uat
+    Description: keypair for the docker host
+    Type: String
+  InstanceType:
+    Default: m4.large
+    Description: Instance Type
+    Type: String
+  DockerImage:
+    Default: "registry.gitlab.com/bti360-mlrn/mlrn-linux-desktop/gp-xenial:latest"
+    Description: Tag of workstation docker image to deploy
+    Type: String
+  Password:
+    Default: easypass
+    Description: Password for SSH and RDP
+    Type: String
+  HasSudoPrivs:
+    Default: Y
+    Description: Does User have Sudo Privs
+    Type: String
+#--------------------------------------------
+# ami-e2d33d98: CoreOS
+# ami-9eb4b1e5: ECS-Optimized (Amazon)
+#--------------------------------------------
+  ImageId:
+    Default: ami-9eb4b1e5
+    Description: AMI Id
+    Type: String
+
+Resources:
+  Ec2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      NetworkInterfaces: 
+        - AssociatePublicIpAddress: true
+          DeviceIndex: 0
+          GroupSet: 
+            - sg-5880ca2b
+          SubnetId: subnet-ed218089
+      IamInstanceProfile: mlrn-ec2-docker-host
+      KeyName: !Ref KeyPairName
+      ImageId: !Ref ImageId
+      InstanceType: !Ref InstanceType
+      Tags:
+        - Key: Name
+          Value: !Sub |
+            ${Username}-workstation
+      UserData:
+        Fn::Base64:
+          !Sub |
+          #!/bin/bash
+
+            PATH=/usr/local/bin:$PATH
+            export CI_PROJECT_DIR=/root/bootstrap
+            rm -rf $CI_PROJECT_DIR && mkdir -p $CI_PROJECT_DIR
+            export MLRN_COMMONS_DIR=$CI_PROJECT_DIR
+            export ETC_CUSTOM=$MLRN_COMMONS_DIR/etc
+
+            yum update -y
+            yum install -y python27-pip.noarch docker jq aws-cli bash git
+            pip install 'docker-compose==1.16.1'
+
+            mkdir -p ~/bootstrap/conf ~/chroot/home $ETC_CUSTOM ~/.aws/
+            echo -e "[default]\nregion = us-east-1\n" > ~/.aws/config
+            aws s3 cp s3://mlrn-devops/sw/mlrn/commons/mlrn-commons-latest.tar.gz $CI_PROJECT_DIR
+            aws s3 cp s3://mlrn-devops/sw/mlrn/mlrn-linux-desktop/docker-compose.yaml $CI_PROJECT_DIR
+
+            export ws_user_gp=${Username}
+            export password_gp=${Password}
+            export desktop_gp_docker_tag=${DockerImage}
+
+            tar -zxvf $CI_PROJECT_DIR/mlrn-commons-latest.tar.gz -C $CI_PROJECT_DIR
+            source $ETC_CUSTOM/bashrc
+
+            setEnvFromYaml -f $ETC_CUSTOM/env-vars.yaml
+
+            service docker start
+
+            $CI_PROJECT_DIR/bin/login-docker-registry.sh
+            docker-compose -f $CI_PROJECT_DIR/docker-compose.yaml up -d
+
+  LoadBalancer:
+    Type: AWS::ElasticLoadBalancing::LoadBalancer
+    Properties:
+      Scheme: internet-facing
+      Instances:
+        - !Ref Ec2Instance
+      Subnets:
+        - subnet-ed218089
+      SecurityGroups:
+        - sg-2982b75a
+      CrossZone: true
+      HealthCheck:
+        HealthyThreshold: 2
+        Interval: 15
+        Target: TCP:2222
+        Timeout: 5
+        UnhealthyThreshold: 2
+      Listeners:
+        - InstancePort: 8080
+          InstanceProtocol: HTTP
+          LoadBalancerPort: 443
+          Protocol: HTTPS
+          SSLCertificateId: arn:aws:acm:us-east-1:794325977099:certificate/82e9e546-ebdf-4eae-a862-eacebf8b7f03
+        - InstancePort: 3389
+          InstanceProtocol: TCP
+          LoadBalancerPort: 3389
+          Protocol: TCP
+        - InstancePort: 2222
+          InstanceProtocol: TCP
+          LoadBalancerPort: 22
+          Protocol: TCP
+      
+  DNSRecordPublic:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      Name: !Sub |
+        ${Username}.wks.mlrn.io.
+      Type: CNAME
+      HostedZoneId: ZGL7LSUEDF1H4
+      ResourceRecords:
+        - !GetAtt LoadBalancer.DNSName
+      TTL: 30
+      
+  DNSRecordPrivate:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      Name: !Sub |
+        ${Username}.wks.mlrn.io.
+      Type: CNAME
+      HostedZoneId: Z3P8PB4Z2T09S9
+      ResourceRecords:
+        - !GetAtt LoadBalancer.DNSName
+      TTL: 30
+
+Outputs:
+  InstanceId:
+    Description: Instance ID of the user workstation
+    Value: !Ref Ec2Instance
+
+
