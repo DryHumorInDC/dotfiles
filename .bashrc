@@ -9,6 +9,9 @@ function pathmunge {
     fi
 }
 
+sv='set -o vi'
+lrt='ls -lsrt'
+ll='ls -l'
 
 function ffmpeg-dv-to-mp4 {
 	cmd="ffmpeg -i $1 -c:v libx264 -c:a aac -pix_fmt yuv420p -strict experimental $2"
@@ -31,3 +34,5 @@ pathmunge "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 pathmunge ~/bin
 alias ll='ls -ls'
 alias lrt='ls -lsrt'
+alias ffprobe='ffprobe -hide_banner'
+alias ffmpeg='ffmpeg -hide_banner'
