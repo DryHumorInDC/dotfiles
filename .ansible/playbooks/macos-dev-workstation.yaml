@@ -1,7 +1,9 @@
 ---
 
 - hosts: localhost
+
   tasks:
+
   - name: Configure nodejs
     include_role:
       name: ansible-nodejs
@@ -10,3 +12,10 @@
     include_role:
       name: ansible-vscode
 
+  - name: Install AWS Tooling
+    include_role:
+      name: ansible-aws
+
+  - name: Install Misc Tooling
+    include_role:
+      name: ansible-misc-tools

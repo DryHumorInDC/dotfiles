@@ -1,0 +1,8 @@
+---
+
+- homebrew:
+    name: "{{ item }}"
+  loop:
+    - coreutils
+    - jq
+

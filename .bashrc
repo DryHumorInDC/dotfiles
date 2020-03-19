@@ -34,6 +34,7 @@ alias downandup='cdmlrn && ./gradlew restartDev && cd -'
 
 pathmunge "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 pathmunge ~/bin
+alias sv='set -o vi'
 alias ll='ls -ls'
 alias lrt='ls -lsrt'
 alias ffprobe='ffprobe -hide_banner'

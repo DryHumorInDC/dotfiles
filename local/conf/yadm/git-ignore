@@ -5,6 +5,8 @@
 # *.[oa]
 # *~
 
+.aws/credentials
+.vim/.netrwhist
 .viminfo
 .CFUserTextEncoding
 .DS_Store
@@ -26,5 +28,5 @@ Music/
 Pictures/
 Public/
 local/ansible/
-
+*.swp
 
