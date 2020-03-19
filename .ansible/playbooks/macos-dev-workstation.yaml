@@ -1,0 +1,12 @@
+---
+
+- hosts: localhost
+  tasks:
+  - name: Configure nodejs
+    include_role:
+      name: ansible-nodejs
+
+  - name: Install and configure visual studio code
+    include_role:
+      name: ansible-vscode
+

@@ -6,6 +6,7 @@ fi
 
 #export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/Current
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home
+export ANSIBLE_CONFIG=~/.ansible/ansible.cfg
 
 
 #-------------------------------------------------------------
@@ -49,7 +50,16 @@ export PATH="$GRADLE_HOME/bin:$JAVA_HOME/bin:/usr/local/bin:/opt/local/bin:/opt/
 # The orginal version is saved in .bash_profile.pysave
 # PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 #--------------------------------------------------------------------
-export PATH="$GRADLE_HOME/bin:$JAVA_HOME/bin:/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="~/local/bin:\
+~/local/ansible/bin:\
+/usr/local/homebrew/bin:\
+$GRADLE_HOME/bin:\
+$JAVA_HOME/bin:\
+/usr/local/bin:\
+/opt/local/bin:\
+/opt/local/sbin:\
+$PATH"
+
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
