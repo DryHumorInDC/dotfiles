@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ansible-playbook ~/.ansible/playbooks/macos-dev-workstation.yaml 
+
