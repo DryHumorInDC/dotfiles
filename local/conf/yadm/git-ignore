@@ -14,7 +14,9 @@
 .bash_history
 .bash_sessions/
 .config/yadm/repo.git/
+.config/configstore
 .lesshst
+.npm/
 .ssh/
 .zsh_history
 .Trash/

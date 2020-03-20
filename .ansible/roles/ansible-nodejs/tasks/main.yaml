@@ -3,3 +3,9 @@
 - homebrew:
     name: nodejs
 
+- npm:
+    name: "{{ item }}"
+    global: true
+  loop:
+    - yaml2json
+
