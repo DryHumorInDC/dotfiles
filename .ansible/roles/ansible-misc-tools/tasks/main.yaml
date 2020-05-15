@@ -1,8 +1,13 @@
 ---
 
+- homebrew_tap:
+    name: teamookla/speedtest
+    state: present
+
 - homebrew:
     name: "{{ item }}"
   loop:
     - coreutils
     - jq
+    - speedtest
 
