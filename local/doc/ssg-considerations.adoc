@@ -1,0 +1,188 @@
+:title: Building the Docs Site with an SSG
+:relativeLocation:
+:ancestorPath: .
+
+ifndef::env-gitlab[]
+include::{ancestorPath}/includes/adoc-header.adoc[]
+endif::[]
+
+ifdef::env-gitlab[]
+''''
+:docname: Readme
+:outfilesuffix: .adoc
+== *IMPORTANT*: I see...
+''''
+endif::[]
+
+=== Options Considered
+The following SSGs are being considered:
+
+[cols="1,1,1,1,1,1", frame="none", grid="none"]
+|===
+a|* Hugo
+a|* Middleman
+a|* Awestruct
+a|* Antora
+a|* Gatsby
+a|* MkDocs
+a|
+|===
+
+Ultimately, a docker image will be crated for running the SSG.  In the meantime, the manual steps are listed below.  Once we have a suitable docker image, the Dockerfile will suffice as the setup procedcure for getting the SSG to run.  Those steps are defined in the following subsections.
+
+==== Awestruct
+Awestruct is installed as a ruby gem.  Installing the following will work to get awestruct running on your desktop:
+
+. steps
+
+==== Hugo
+
+==== Middleman
+Middleman is a bit long in the tooth, but it remains the SSG used by the Spring.io team, and this author (Matt) has always liked how these docs were presented.  There entire doc base is in asciidoc.
+
+==== Antora
+I don't know if this is the best choice, but it is the one that deserves the most investigation.  I'm very intrigued by this, given that Dan Allen (createor of asciidoctor) is leading this new project.  They address many shortcomings of existing SSGs.  _Awestruct_ (above) is still the way that https://asciidoctor.org is built.  Perhaps we should wait until the following conditions are met:
+
+. The asciidoctor folks (i.e. Dan Allen) at least dogfood _Antora_ first?  The team is in the process of migrating to Antora, so this *will* happen eventually.  See https://github.com/asciidoctor/docs.asciidoctor.org.
+. The search index is fully implemented (lunr), eta: Q2-2019, track with: https://docs.antora.org/antora/2.0/project/roadmap/#v2-2-x
+
+Anyway, definitely checkout https://antora.org !!
+
+==== Gatsby
+Javascript framework that expects Markdown as input.  It does mention _extended_ markdown, but that may not be necessary; would have to experiment.  On the surface, Gatsby looks like it has a pretty rich ecosystem fof plugins, and it is nice that it serves up ReactJS webpage, given how cool that is!  People would be interested in getting good with that since it is not a wasted skill to learn ReactJS.
+
+==== MkDocs
+This is fairly well proven in many enterprises and foss initiatives.  The disadvantage of using MkDocs is the same central argument against Markdown in general -- it is only useful when you extend it in a non-standard way.  For example, the expressiveness in MkDocs comes from using _Python-MarkDown_, not the basic markdown syntax.  Again -- there is only one specification for feature-complete documentation formats such as ReST (ReStructured Text) and asciidoc.
+
+=== Real World Examples
+WARNING: This section is biased; it is based on Matt's personal assessment.
+
+<<table-static-sites-we-like>> lists a handful of statically generated sites that we like the look of.  There are some with each type of markup syntax, and it should be noted that each SSG tends to have a preferred markup.
+
+[[table-static-sites-we-like]]
+.Statically generated sites we like
+[cols="6*",uframe="none", grid="none", options="header"]
+|===
+|Docs Site
+|URL
+|Markup Syntax
+|SSG
+|Notes
+|SSG Trend ^*(1)*^
+
+|Ansible
+|https://docs.ansible.com/ansible/latest/index.html
+|RST
+|Sphinx
+|
+|Hot
+
+|Hugo Docs
+|https://gohugo.io/documentation
+|Markdown preferred, asciidoc allowed
+|Hugo
+|
+|Hot
+
+|Microsoft
+|https://docs.microsoft.com
+|CommonMark-flavored Markdown & Custom Markdown extensions
+|OpenPublishing, Microsoft Proprietary?
+|*(2)*
+|Dormant
+
+|Spring
+|https://docs.spring.io
+|asciidoc
+|Middleman
+|
+|Dormant
+
+|Ping Identity
+|https://docs.pingidentity.com
+|DITA
+|DITA Open Toolkit
+|*(5)*
+|Dormant
+
+|Antora Docs
+|https://docs.antory.org
+|asciidoc
+|Antora
+|
+|Active
+
+|Elastic
+|https://elastic.co/guide
+|asciidoc
+|Custom Perl script & Jekyll
+| *(3)*
+|Active
+
+|Docker
+|https://docs.docker.com
+|Markdown
+|Jekyll
+|
+|Active
+
+|Prometheus & GitLab
+|https://prometheus.io/docs/introduction/overview +
+https://docs.gitlab.com
+|Markdown (asciidoc supported)
+|Nanoc
+|*(5)*
+|Dormant
+
+|AWS
+|https://docs.aws.amazon.com/
+|Github-Flavored Markdown & RST
+|Sphinx & custom python script.
+|
+|Hot
+
+|ReadTheDocs
+|https://docs.readthedocs.io
+|RST
+|mkdocs
+|*(4)*
+|Hot
+
+|Openshift
+|https://docs.openshift.com
+|asciidoc
+|AcciiBinder
+|
+|Dormant
+
+|Gnome Built-in
+|file:///usr/share/doc/terminator/html/index.html
+|RST
+|Sphinx
+|
+|Hot
+
+|Linux & CMake Docs
+|https://kernel.org +
+https://cmake.org
+|RST
+|Sphinx
+|
+|Hot
+|===
+
+NOTE: *(1)* We used the number of Git stargazers and Twitter followers to determine the (albeit somewhat subjectively) if the SSG is _HJot_, _Active_, or _Dormant_.  If there are active commits and issue activity, it is at the very least: _Active_.  If it's the top-25 in link:https://staticgen.com[] -- and >= 0.3% growth in git(hub/lab) stars in the past week -- then it's _Hot_.  Anything else would be considreed dormant.
+
+TIP: *(2)* Excellent techdoc writer's style guide: https://docs.microsoft.com/en-us/style-guide
+
+NOTE: *(3)* This site seems to be the easiest transition for us.  Asciidoc is a 1st class citizen.  In fact, it is used to host the Antora docs, a beautiful, indexed site, written in asciidoc.  The fact that the _asciidoctor_ author uses it to publish said docs using htis SSG is a good fit for us.  It has a local index, albeit built with an indexing service.  I'm sure we can get this to work with a local index (e.g. Lunr).
+
+WARNING: *(4)* readthedocs.io warns against using Markdown syntax in favor of RST.  Great article here: https://ericholscher.com/blog/2016/mar/15/dont-use-markdown-for-technical-docs
+
+NOTE: *(5)* This may be the most impressive set of docs I've seen, from the perspective of single-source component reuse.  That said, I think this would be more suitable for a fortune-500 company that is willing to support a tech writing department hat can commit to writing in an obscure source format.  DITA is an XML format, and for the pleasant writing experience, this requires  COTS XML editors like OxygenXML, or something like Adobe Framemaker.  The experience is superior to other approaches in how it allows an author to control perspective and scope of documentation, while maintaing creative control of layout, but again -- overkill for what we are trying to do at the project level.  CommonMark can be used as the source, but it requires constant transforming to DITA to stay useful.
+
+NOTE: *(6)* Nanoc should get an honorable mention here, despite it being labeled as _dormant_.  Rationale: It is used by some heavy hitters, namely: GitLab and Prometheus.
+
+
+
+
