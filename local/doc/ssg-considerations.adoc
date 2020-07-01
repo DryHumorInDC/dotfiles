@@ -14,8 +14,10 @@ endif::[]
 :scmUriPrefix: https://{scmHostname}/{scmToplevel}
 :scmUriPrefixDocs: {scmUriPrefix}/{scmToplevelDocs}/relativeLocation}
 :sectnums:
-:toc:
-:toclevels: 6
+= HubPress
+:toc: macro
+:toclevels: 4
+:sectnums:
 :toc-placement: left
 :setanchors:
 :setlinks:
