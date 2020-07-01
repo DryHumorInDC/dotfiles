@@ -2,9 +2,9 @@
 :relativeLocation:
 :ancestorPath: .
 
-ifndef::env-gitlab[]
-include::{ancestorPath}/includes/adoc-header.adoc[]
-endif::[]
+// ifndef::env-gitlab[]
+// include::{ancestorPath}/includes/adoc-header.adoc[]
+// endif::[]
 
 :imagesDir: ./images
 :includcesDir: ./includes
@@ -13,9 +13,7 @@ endif::[]
 :scmToplevel: DryHumorInDC
 :scmUriPrefix: https://{scmHostname}/{scmToplevel}
 :scmUriPrefixDocs: {scmUriPrefix}/{scmToplevelDocs}/relativeLocation}
-:sectnums:
-= HubPress
-:toc: macro
+:toc:
 :toclevels: 4
 :sectnums:
 :toc-placement: left
@@ -28,10 +26,10 @@ endif::[]
 :iconfont-remote!:
 :iconfont-name: fontawesome-min-4.6.1
 :stylesdir: {ancestorPath}/css
-:bl: pass:[ +]
-= {title}
+//- :bl: pass:[ +]
+//- = {title}
 
-toc::[]
+//- toc::[]
 
 ifeval::["{filetype}" == "html"]
 pass:[<link rel="stylesheet" href="]{ancestorPath}/pass:[css/asciinema-player.css" />]
