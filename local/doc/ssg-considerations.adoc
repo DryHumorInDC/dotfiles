@@ -6,6 +6,56 @@ ifndef::env-gitlab[]
 include::{ancestorPath}/includes/adoc-header.adoc[]
 endif::[]
 
+:imagesDir: ./images
+:includcesDir: ./includes
+:program: my-program
+:scmHostname: github.com
+:scmToplevel: DryHumorInDC
+:scmUriPrefix: https://{scmHostname}/{scmToplevel}
+:scmUriPrefixDocs: {scmUriPrefix}/{scmToplevelDocs}/relativeLocation}
+:sectnums:
+:toc:
+:toclevels: 6
+:toc-placement: left
+:setanchors:
+:setlinks:
+:xrefstyle: short
+:sectanchors:
+:webfonts!:
+:icons: font
+:iconfont-remote!:
+:iconfont-name: fontawesome-min-4.6.1
+:stylesdir: {ancestorPath}/css
+:bl: pass:[ +]
+= {title}
+
+toc::[]
+
+ifeval::["{filetype}" == "html"]
+pass:[<link rel="stylesheet" href="]{ancestorPath}/pass:[css/asciinema-player.css" />]
+pass:[<script scr="]{ancestorPath}/pass:[javascript/asciinema-player.js"></script>]
+endif::[]
+
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+ifdef::env-gitlab[]
+:outfilesuffix: .adoc
+endif::[]
+
+ifndef::env-gitlab[]
+ifeval::["{docname}" != "toplevel-thing"]
+ifeval::["filetype}" != "pdf"]
+link:{ancestorPath/toplevel-thing{outfilesuffix}[Return to Top-Level Docs]
+endif::[]
+endif::[]
+endif::[]
+
 ifdef::env-gitlab[]
 ''''
 :docname: Readme
