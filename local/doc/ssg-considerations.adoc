@@ -141,6 +141,14 @@ WARNING: This section is biased; it is based on Matt's personal assessment.
 |
 |Hot
 
+|Python Docs
+|https://pythondotorg.readthedocs.io +
+https://docs.python.org/3/
+|RST
+|Sphinx
+|
+|Hot
+
 |Microsoft
 |https://docs.microsoft.com
 |CommonMark-flavored Markdown & Custom Markdown extensions
