@@ -127,6 +127,13 @@ WARNING: This section is biased; it is based on Matt's personal assessment.
 |
 |Hot
 
+|Django
+|https://docs.djangoproject.com
+|RST
+|Sphinx
+|
+|Hot
+
 |Hugo Docs
 |https://gohugo.io/documentation
 |Markdown preferred, asciidoc allowed
