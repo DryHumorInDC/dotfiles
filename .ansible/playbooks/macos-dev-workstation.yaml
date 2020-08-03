@@ -4,9 +4,22 @@
 
   tasks:
 
+  - name: Install Homebrew
+    include_role:
+      name: ansible-homebrew
+
+  - name: Install Misc Tooling
+    include_role:
+      name: ansible-misc-tools
+
+  - name: Install Chrome
+    include_role:
+      name: ansible-chrome
+
   - name: Configure nodejs
     include_role:
       name: ansible-nodejs
+    ignore_errors: yes
 
   - name: Install and configure visual studio code
     include_role:
@@ -16,6 +29,4 @@
     include_role:
       name: ansible-aws
 
-  - name: Install Misc Tooling
-    include_role:
-      name: ansible-misc-tools
+

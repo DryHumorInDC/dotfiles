@@ -1,4 +1,8 @@
 #!/bin/bash
 
-ansible-playbook ~/.ansible/playbooks/macos-dev-workstation.yaml 
+pip3 install --user ansible
+#---------------------------------------------------
+# TODO Fix path
+#---------------------------------------------------
+~/Library/Python/3.7/bin/ansible-playbook ~/.ansible/playbooks/macos-dev-workstation.yaml 
 
