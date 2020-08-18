@@ -127,6 +127,14 @@ WARNING: This section is biased; it is based on Matt's personal assessment.
 |
 |Hot
 
+|ReactJS Docs
+|https://reactjs.org/docs/getting-started.html +
+https://open.fda.gov/
+|Markdown
+|Gatsby.js
+|
+|Hot
+
 |Django
 |https://docs.djangoproject.com
 |RST
