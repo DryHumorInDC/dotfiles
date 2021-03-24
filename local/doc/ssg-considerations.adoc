@@ -236,6 +236,13 @@ https://docs.gitlab.com
 |
 |Hot
 
+|Eclipse Che
+|https://www.eclipse.org/che/docs/che-7/overview/introduction-to-eclipse-che
+|Asciidoc
+|Antora
+|
+|Hot
+
 |Linux & CMake Docs
 |https://kernel.org +
 https://cmake.org
