@@ -2,10 +2,26 @@
 
 - homebrew:
     name: nodejs
+    state: absent
+
+- homebrew:
+    name: nvm
+
+- name: Create the local .nvm dir
+  file:
+    path: ~/.nvm
+    state: directory
+
+#----------------------------------------------
+# Must exit ansible and run nvm install
+# then come back to have npm in your search
+# path.
+#----------------------------------------------
 
 - npm:
     name: "{{ item }}"
     global: true
   loop:
     - yaml2json
+  ignore_errors: yes
 

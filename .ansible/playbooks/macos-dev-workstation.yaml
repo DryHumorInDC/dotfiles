@@ -10,30 +10,46 @@
   - name: Install Homebrew
     include_role:
       name: ansible-homebrew
+      apply:
+        tags: ansible-homebrew
     when: ansible_distribution == "MacOSX"
+    tags: ansible-homebrew
 
   - name: Install Misc Tooling
     include_role:
       name: ansible-misc-tools
+      apply:
+        tags: ansible-misc-tools
+    tags: ansible-misc-tools
 
   - name: Install Chrome
     include_role:
       name: ansible-chrome
       apply:
         ignore_errors: yes
+        tags: ansible-chrome
+    tags: ansible-chrome
 
   - name: Configure nodejs
     include_role:
       name: ansible-nodejs
       apply:
         ignore_errors: yes
+        tags: ansible-nodejs
+    tags: ansible-nodejs
 
   - name: Install and configure visual studio code
     include_role:
       name: ansible-vscode
+      apply:
+        tags: ansible-vscode
+    tags: ansible-vscode
 
   - name: Install AWS Tooling
     include_role:
       name: ansible-aws
+      apply:
+        tags: ansible-aws
+    tags: ansible-aws
 
 

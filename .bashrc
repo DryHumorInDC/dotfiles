@@ -39,3 +39,10 @@ alias ll='ls -ls'
 alias lrt='ls -lsrt'
 alias ffprobe='ffprobe -hide_banner'
 alias ffmpeg='ffmpeg -hide_banner'
+
+
+export NVM_DIR="$HOME/.nvm"
+mkdir -p $NVM_DIR
+  [ -s "/usr/local/homebrew/opt/nvm/nvm.sh" ] && . "/usr/local/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
