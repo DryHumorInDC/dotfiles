@@ -6,7 +6,6 @@
 // include::{ancestorPath}/includes/adoc-header.adoc[]
 // endif::[]
 
-
 :imagesDir: ./images
 :includcesDir: ./includes
 :program: my-program
