@@ -1,5 +1,5 @@
 ---
 
-- homebrew:
-    name: awscli
+- include: "{{ ansible_distribution }}.yml"
+
 

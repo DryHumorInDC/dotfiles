@@ -4,9 +4,13 @@
 
   tasks:
 
+  - debug:
+      var: ansible_distribution
+
   - name: Install Homebrew
     include_role:
       name: ansible-homebrew
+    when: ansible_distribution == "MacOSX"
 
   - name: Install Misc Tooling
     include_role:
@@ -15,11 +19,14 @@
   - name: Install Chrome
     include_role:
       name: ansible-chrome
+      apply:
+        ignore_errors: yes
 
   - name: Configure nodejs
     include_role:
       name: ansible-nodejs
-    ignore_errors: yes
+      apply:
+        ignore_errors: yes
 
   - name: Install and configure visual studio code
     include_role:

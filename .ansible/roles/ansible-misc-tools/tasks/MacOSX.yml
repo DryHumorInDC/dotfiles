@@ -1,0 +1,23 @@
+---
+
+- homebrew_tap:
+    name: teamookla/speedtest
+    state: present
+
+- homebrew:
+    name: "{{ item }}"
+  loop:
+    - coreutils
+    - jq
+    - speedtest
+    - tree
+
+- name: Check if LastPass is already installed
+  stat:
+    path: /Applications/LastPass.app
+  register: lastpass
+
+- homebrew_cask:
+    name: lastpass
+  when: not lastpass.stat.exists
+

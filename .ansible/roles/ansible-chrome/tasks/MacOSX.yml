@@ -1,0 +1,13 @@
+---
+
+- name: Test for existence of google chrome
+  stat:
+    path: '/Applications/Google Chrome.app'
+  register: dirstat
+
+- name: Install Google Chrome
+  homebrew_cask:
+    name: google-chrome
+  when: not dirstat.stat.exists
+
+

@@ -1,11 +1,5 @@
 ---
 
-- homebrew:
-    name: nodejs
+- include: "{{ ansible_distribution }}.yml"
 
-- npm:
-    name: "{{ item }}"
-    global: true
-  loop:
-    - yaml2json
 

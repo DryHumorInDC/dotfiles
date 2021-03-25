@@ -1,0 +1,12 @@
+---
+
+- name: Test for existence of VS Code
+  stat:
+    path: '/Applications/Visual Studio Code.app'
+  register: dirstat
+
+- homebrew_cask:
+    name: visual-studio-code
+  when: not dirstat.stat.exists
+
+

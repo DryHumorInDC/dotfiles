@@ -1,6 +1,5 @@
 ---
 
-- homebrew_cask:
-    name: google-chrome
+- include: "{{ ansible_distribution }}.yml"
 
 
