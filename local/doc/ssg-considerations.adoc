@@ -201,9 +201,11 @@ https://docs.centos.org
 |
 |Active
 
-|Prometheus & GitLab
+|Prometheus & Github
 |https://prometheus.io/docs/introduction/overview +
-https://docs.gitlab.com
+https://docs.github.com +
+https://nanoc.app/about
+
 |Markdown (asciidoc supported)
 |Nanoc
 |*(5)*
