@@ -246,14 +246,6 @@ https://nanoc.app/about
 |
 |Hot
 
-|Prometheus and GitHub Dev Docs
-|https://developer.github.com
-https://prometheus.io
-|MD, asciidoc
-|Nanoc
-|
-|Hot
-
 |Linux & CMake Docs
 |https://kernel.org +
 https://cmake.org
