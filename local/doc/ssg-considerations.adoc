@@ -151,6 +151,13 @@ https://helm.sh/docs
 |
 |Hot
 
+|Gradle
+|https://docs.gradle.org
+|Asciidoc
+|Custom
+|
+|Cold (Used one place)
+
 |Python Docs
 |https://pythondotorg.readthedocs.io +
 https://docs.python.org/3/
