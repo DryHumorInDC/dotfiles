@@ -71,7 +71,7 @@ The following SSGs are being considered:
 |===
 a|* Hugo
 a|* Middleman
-a|* Awestruct
+a|* Aweruct
 a|* Antora
 a|* Gatsby
 a|* MkDocs
@@ -186,6 +186,14 @@ https://docs.python.org/3/
 |DITA Open Toolkit
 |*(5)*
 |Dormant
+
+|Groovy Docs & Jenkins Docs
+|https://groovy-lang.org/install.html +
+https://www.jenkins.io/doc/book/installing/
+|asciidoc
+|Awestruct
+|
+|Active
 
 |Antora Docs
 |https://docs.antora.org +
