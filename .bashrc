@@ -32,8 +32,16 @@ function ffmpeg-dv-to-mp4 {
 alias downandup='cdmlrn && ./gradlew restartDev && cd -'
 
 
+#---------------------------------------------------------------
+# export JAVA_HOME=/usr/local/Homebrew/opt/openjdk
+#---------------------------------------------------------------
+export JAVA_HOME='/usr/local/Homebrew/opt/openjdk@11'
+export CPPFLAGS="-I$JAVA_HOME/include"
+
 pathmunge "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 pathmunge ~/bin
+pathmunge $JAVA_HOME/bin:$PATH
+
 alias sv='set -o vi'
 alias ll='ls -ls'
 alias lrt='ls -lsrt'
