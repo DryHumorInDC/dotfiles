@@ -66,6 +66,7 @@ endif::[]
 
 === Options Considered
 Two decisions are required for implementing _Documentation-as-Code_ solution:
+
 . Choose the markup
 . Choose the static site generator (SSG)
 
