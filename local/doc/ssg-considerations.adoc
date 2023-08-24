@@ -65,7 +65,9 @@ ifdef::env-gitlab[]
 endif::[]
 
 === Options Considered
-The following toolchains have been considered:
+Two decisions are required for implementing _Documentation-as-Code_ solution:
+. Choose the markup
+. Choose the static site generator (SSG)
 
 [cols="1,1,1,1", frame="none", grid="none"]
 |===
