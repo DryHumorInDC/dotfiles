@@ -239,7 +239,6 @@ https://docs.centos.org
 |https://prometheus.io/docs/introduction/overview +
 https://docs.github.com +
 https://nanoc.app/about
-
 |Markdown (asciidoc supported)
 |Nanoc
 |*(5)*
