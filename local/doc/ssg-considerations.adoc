@@ -121,13 +121,15 @@ WARNING: This section is biased; it is based on Matt's personal assessment.
 Django +
 Python +
 cmake +
-kernel.org
+kernel.org +
+offline help docs in Gnome
 |https://docs.ansible.com/ansible/latest/index.html +
 https://docs.djangoproject.com +
 https://pythondotorg.readthedocs.io +
 https://docs.python.org/3/ +
 https://kernel.org +
-https://cmake.org
+https://cmake.org +
+file:///usr/share/doc/terminator/html/index.html
 |RST
 |Sphinx
 |
@@ -253,13 +255,6 @@ https://nanoc.app/about
 |AcciiBinder
 |
 |Dormant
-
-|Gnome Built-in
-|file:///usr/share/doc/terminator/html/index.html
-|RST
-|Sphinx
-|
-|Hot
 
 |Eclipse Che
 |https://www.eclipse.org/che/docs/che-7/overview/introduction-to-eclipse-che
