@@ -272,6 +272,7 @@ https://nanoc.app/about
 |
 |Hot
 
+
 NOTE: *(1)* We used the number of Git stargazers and Twitter followers to determine the (albeit somewhat subjectively) if the SSG is _HJot_, _Active_, or _Dormant_.  If there are active commits and issue activity, it is at the very least: _Active_.  If it's the top-25 in link:https://staticgen.com[] -- and >= 0.3% growth in git(hub/lab) stars in the past week -- then it's _Hot_.  Anything else would be considreed dormant.
 
 TIP: *(2)* Excellent techdoc writer's style guide: https://docs.microsoft.com/en-us/style-guide
