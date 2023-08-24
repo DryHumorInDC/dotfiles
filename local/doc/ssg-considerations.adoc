@@ -117,8 +117,17 @@ WARNING: This section is biased; it is based on Matt's personal assessment.
 |Notes
 |SSG Trend ^*(1)*^
 
-|Ansible
-|https://docs.ansible.com/ansible/latest/index.html
+|Ansible +
+Django +
+Python +
+cmake +
+kernel.org
+|https://docs.ansible.com/ansible/latest/index.html +
+https://docs.djangoproject.com +
+https://pythondotorg.readthedocs.io +
+https://docs.python.org/3/ +
+https://kernel.org +
+https://cmake.org
 |RST
 |Sphinx
 |
@@ -149,14 +158,6 @@ Arc42
 |
 |Hot
 
-
-|Django
-|https://docs.djangoproject.com
-|RST
-|Sphinx
-|
-|Hot
-
 |Hugo Docs
 |https://gohugo.io/documentation +
 https://kubernetes.io/docs/home +
@@ -174,14 +175,6 @@ https://docs.docker.com (used to be Jekyll)
 |Custom
 |
 |Cold (Used one place)
-
-|Python Docs
-|https://pythondotorg.readthedocs.io +
-https://docs.python.org/3/
-|RST
-|Sphinx
-|
-|Hot
 
 |Microsoft
 |https://docs.microsoft.com
@@ -210,7 +203,7 @@ https://www.jenkins.io/doc/book/installing/
 |asciidoc
 |Awestruct
 |
-|Active
+|Dormant
 
 |Antora Docs +
 Asciidoctor Docs +
@@ -274,15 +267,6 @@ https://nanoc.app/about
 |Antora
 |
 |Hot
-
-|Linux & CMake Docs
-|https://kernel.org +
-https://cmake.org
-|RST
-|Sphinx
-|
-|Hot
-|===
 
 NOTE: *(1)* We used the number of Git stargazers and Twitter followers to determine the (albeit somewhat subjectively) if the SSG is _HJot_, _Active_, or _Dormant_.  If there are active commits and issue activity, it is at the very least: _Active_.  If it's the top-25 in link:https://staticgen.com[] -- and >= 0.3% growth in git(hub/lab) stars in the past week -- then it's _Hot_.  Anything else would be considreed dormant.
 
