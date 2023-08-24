@@ -65,17 +65,17 @@ ifdef::env-gitlab[]
 endif::[]
 
 === Options Considered
-The following SSGs are being considered:
+The following toolchains are being considered:
 
 [cols="1,1,1,1,1,1", frame="none", grid="none"]
 |===
-a|* Hugo
-a|* Middleman
-a|* Aweruct
-a|* Antora
-a|* Gatsby
-a|* MkDocs
-a|
+a|* RST/Sphinx
+a|* RST/mkdocs
+a|* MDX/Gatsby.sh
+a|* MDX/Docusaurus
+a|* ADOC/docToolchain
+a|* ADOC/Antora
+a|* MD/Hugo
 |===
 
 Ultimately, a docker image will be created for running the SSG.  In the meantime, the manual steps are listed below.  Once we have a suitable docker image, the Dockerfile will suffice as the setup procedcure for getting the SSG to run.  Those steps are defined in the following subsections.
