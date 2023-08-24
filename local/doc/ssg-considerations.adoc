@@ -82,25 +82,31 @@ a|* RST/Sphinx
 
 Ultimately, a docker image will be created for running the SSG.  In the meantime, the manual steps are listed below.  Once we have a suitable docker image, the Dockerfile will suffice as the setup procedcure for getting the SSG to run.  Those steps are defined in the following subsections.
 
-==== Awestruct
-Awestruct is installed as a ruby gem.  Installing the following will work to get awestruct running on your desktop:
+==== Markup
 
-. steps
+===== Asciidoc
 
-==== Hugo
+===== GFM (Github-Flavored Markdown)
 
-==== Middleman
-Middleman is a bit long in the tooth, but it remains the SSG used by the Spring.io team, and this author (Matt) has always liked how these docs were presented.  There entire doc base is in asciidoc.
+===== MDX (Markdown with JSX)
 
-==== Antora
+===== RST (ReStructured Text)
+
+==== SSG
+
+===== Antora
 This option deserves a lot of investigation.  I'm very intrigued by this, given that Dan Allen (createor of asciidoctor) is leading this new project.  They address many shortcomings of existing SSGs.  Now that _Awestruct_ (above) is no longer the SSG used to publish https://docs.asciidoctor.org, we can safely conclude that Antora is being dogfooded by Dan Allen.  This gives a lot of confidence in using it.  It also appears that the search index is fully implemented (lunr).
 
-Anyway, definitely checkout https://antora.org !!
+===== docToolchain
 
-==== Gatsby
+===== Docusaurus
+
+===== Gatsby.js
 Javascript framework that expects Markdown as input.  It does mention _extended_ markdown, but that may not be necessary; would have to experiment.  On the surface, Gatsby looks like it has a pretty rich ecosystem fof plugins, and it is nice that it serves up ReactJS webpage, given how cool that is!  People would be interested in getting good with that since it is not a wasted skill to learn ReactJS.
 
-==== MkDocs
+===== Hugo
+
+===== MkDocs
 This is fairly well proven in many enterprises and foss initiatives.  The disadvantage of using MkDocs is the same central argument against Markdown in general -- it is only useful when you extend it in a non-standard way.  For example, the expressiveness in MkDocs comes from using _Python-MarkDown_, not the basic markdown syntax.  Again -- there is only one specification for feature-complete documentation formats such as ReST (ReStructured Text) and asciidoc.
 
 === Real World Examples
