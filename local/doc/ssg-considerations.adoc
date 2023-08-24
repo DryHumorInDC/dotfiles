@@ -70,7 +70,7 @@ Two decisions are required for implementing _Documentation-as-Code_ solution:
 . Choose the markup
 . Choose the static site generator (SSG)
 
-Of course, each SSG tends to have a favorite markup format used.  <<table-markup-ssg-contenders>> has examples of SSG-generated websites we like.
+Of course, each SSG tends to have a favorite markup format used.  <<table-markup-ssg-contenders>> lists well known markup/ssg combinatins.
 
 [[table-markup-ssg-contenders]]
 .Markup/SSG Contenders
