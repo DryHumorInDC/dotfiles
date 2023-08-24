@@ -219,10 +219,12 @@ https://www.jenkins.io/doc/book/installing/
 
 |Antora Docs +
 Asciidoctor Docs +
-CentOS Docs
+CentOS Docs +
+Solr Docs
 |https://docs.antora.org +
 https://docs.asciidoctor.org +
-https://docs.centos.org
+https://docs.centos.org +
+https://solr.apache.org/guide
 |asciidoc
 |Antora
 |
@@ -271,8 +273,6 @@ https://nanoc.app/about
 |Antora
 |
 |Hot
-===|
-
 
 NOTE: *(1)* We used the number of Git stargazers and Twitter followers to determine the (albeit somewhat subjectively) if the SSG is _HJot_, _Active_, or _Dormant_.  If there are active commits and issue activity, it is at the very least: _Active_.  If it's the top-25 in link:https://staticgen.com[] -- and >= 0.3% growth in git(hub/lab) stars in the past week -- then it's _Hot_.  Anything else would be considreed dormant.
 
