@@ -162,7 +162,11 @@ https://aim42.github.io/htmlSanityCheck
 |
 |Active
 
-|Hugo Docs
+|Hugo Docs +
+Kubernetes +
+Helm +
+etcd +
+Docker
 |https://gohugo.io/documentation +
 https://kubernetes.io/docs/home +
 https://helm.sh/docs +
