@@ -150,7 +150,7 @@ https://open.fda.gov
 ReactNative
 |https://jestjs.io/docs/getting-started +
 https://reactnative.dev/docs/getting-started
-|Markdown
+|MDX
 |Docusaurus (Facebook)
 |*(7)*
 |Hot
