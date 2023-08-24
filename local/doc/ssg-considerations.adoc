@@ -73,6 +73,7 @@ Two decisions are required for implementing _Documentation-as-Code_ solution:
 Of course, each SSG tends to have a favorite markup format used.  <<table-markup-ssg-contenders>> has examples of SSG-generated websites we like.
 
 [[table-markup-ssg-contenders]]
+.Markup/SSG Contenders
 [cols="1,1,1,1", frame="none", grid="none"]
 |===
 a|* ADOC/Antora
