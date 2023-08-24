@@ -78,7 +78,7 @@ a|* MkDocs
 a|
 |===
 
-Ultimately, a docker image will be crated for running the SSG.  In the meantime, the manual steps are listed below.  Once we have a suitable docker image, the Dockerfile will suffice as the setup procedcure for getting the SSG to run.  Those steps are defined in the following subsections.
+Ultimately, a docker image will be created for running the SSG.  In the meantime, the manual steps are listed below.  Once we have a suitable docker image, the Dockerfile will suffice as the setup procedcure for getting the SSG to run.  Those steps are defined in the following subsections.
 
 ==== Awestruct
 Awestruct is installed as a ruby gem.  Installing the following will work to get awestruct running on your desktop:
@@ -91,10 +91,7 @@ Awestruct is installed as a ruby gem.  Installing the following will work to get
 Middleman is a bit long in the tooth, but it remains the SSG used by the Spring.io team, and this author (Matt) has always liked how these docs were presented.  There entire doc base is in asciidoc.
 
 ==== Antora
-I don't know if this is the best choice, but it is the one that deserves the most investigation.  I'm very intrigued by this, given that Dan Allen (createor of asciidoctor) is leading this new project.  They address many shortcomings of existing SSGs.  _Awestruct_ (above) is still the way that https://asciidoctor.org is built.  Perhaps we should wait until the following conditions are met:
-
-. The asciidoctor folks (i.e. Dan Allen) at least dogfood _Antora_ first?  The team is in the process of migrating to Antora, so this *will* happen eventually.  See https://github.com/asciidoctor/docs.asciidoctor.org.
-. The search index is fully implemented (lunr), eta: Q2-2019, track with: https://docs.antora.org/antora/2.0/project/roadmap/#v2-2-x
+This option deserves a lot of investigation.  I'm very intrigued by this, given that Dan Allen (createor of asciidoctor) is leading this new project.  They address many shortcomings of existing SSGs.  Now that _Awestruct_ (above) is no longer the SSG used to publish https://docs.asciidoctor.org, we can safely conclude that Antora is being dogfooded by Dan Allen.  This gives a lot of confidence in using it.  It also appears that the search index is fully implemented (lunr).
 
 Anyway, definitely checkout https://antora.org !!
 
@@ -129,11 +126,20 @@ WARNING: This section is biased; it is based on Matt's personal assessment.
 
 |ReactJS Docs
 |https://reactjs.org/docs/getting-started.html +
-https://open.fda.gov/
-|Markdown
+https://docsearch.algolia.com/docs/what-is-docsearch
+|MDX
 |Gatsby.js
 |
 |Hot
+
+|Docusaurus
+|https://jestjs.io/docs/getting-started +
+https://open.fda.gov/
+|Markdown
+|Docusaurus (Facebook)
+|
+|Hot
+
 
 |Django
 |https://docs.djangoproject.com
@@ -196,8 +202,11 @@ https://www.jenkins.io/doc/book/installing/
 |
 |Active
 
-|Antora Docs
+|Antora Docs +
+Asciidoctor Docs +
+CentOS Docs
 |https://docs.antora.org +
+https://docs.asciidoctor.org +
 https://docs.centos.org
 |asciidoc
 |Antora
