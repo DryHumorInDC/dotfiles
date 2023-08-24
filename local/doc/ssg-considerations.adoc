@@ -140,6 +140,15 @@ https://open.fda.gov/
 |
 |Hot
 
+|docToolchain
+|https://doctoolchain.org/docToolchain/v2.0.x/index.html +
+https://arc42.org/documentation/
+|Asciidoc
+|docToolchain +
+Arc42
+|
+|Hot
+
 
 |Django
 |https://docs.djangoproject.com
@@ -152,7 +161,8 @@ https://open.fda.gov/
 |https://gohugo.io/documentation +
 https://kubernetes.io/docs/home +
 https://helm.sh/docs +
-https://etcd.io/docs/latest
+https://etcd.io/docs/latest +
+https://docs.docker.com (used to be Jekyll)
 |Markdown preferred, asciidoc allowed
 |Hugo
 |
@@ -218,13 +228,6 @@ https://docs.centos.org
 |asciidoc
 |Custom Perl script & Jekyll
 | *(3)*
-|Active
-
-|Docker
-|https://docs.docker.com
-|Markdown
-|Jekyll
-|
 |Active
 
 |Prometheus & Github
