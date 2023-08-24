@@ -70,9 +70,9 @@ Two decisions are required for implementing _Documentation-as-Code_ solution:
 . Choose the markup
 . Choose the static site generator (SSG)
 
-Of course, each SSG tends to have a favorite markup format used.  <<table-static-sites-we-like>> has examples of SSG-generated websites we like.
+Of course, each SSG tends to have a favorite markup format used.  <<table-markup-ssg-contenders>> has examples of SSG-generated websites we like.
 
-[[table-static-sites-we-like]]
+[[table-markup-ssg-contenders]]
 [cols="1,1,1,1", frame="none", grid="none"]
 |===
 a|* ADOC/Antora
@@ -89,6 +89,7 @@ a|* RST/Sphinx
 Ultimately, a docker image will be created for running the SSG.  In the meantime, the manual steps are listed below.  Once we have a suitable docker image, the Dockerfile will suffice as the setup procedcure for getting the SSG to run.  Those steps are defined in the following subsections.
 
 ==== Markup
+The markup is an writing format that controls the content and structure of the document.  _Structure_ in this context applies only to the logical structure of the document; the presentation of the document is controlled by the SSG.
 
 ===== Asciidoc
 
@@ -98,7 +99,8 @@ Ultimately, a docker image will be created for running the SSG.  In the meantime
 
 ===== RST (ReStructured Text)
 
-==== SSG
+==== Static Site Generator (SSG)
+Each of the SSG contenders we are considering have examples listed in <<table-ssg-showcases>>
 
 ===== Antora
 This option deserves a lot of investigation.  I'm very intrigued by this, given that Dan Allen (createor of asciidoctor) is leading this new project.  They address many shortcomings of existing SSGs.  Now that _Awestruct_ (above) is no longer the SSG used to publish https://docs.asciidoctor.org, we can safely conclude that Antora is being dogfooded by Dan Allen.  This gives a lot of confidence in using it.  It also appears that the search index is fully implemented (lunr).
@@ -118,9 +120,9 @@ This is fairly well proven in many enterprises and foss initiatives.  The disadv
 === Real World Examples
 WARNING: This section is biased; it is based on Matt's personal assessment.
 
-<<table-static-sites-we-like>> lists a handful of statically generated sites that we like the look of.  There are some with each type of markup syntax, and it should be noted that each SSG tends to have a preferred markup.
+<<table-ssg-showcases>> lists a handful of statically generated sites that we like the look of.  There are some with each type of markup syntax, and it should be noted that each SSG tends to have a preferred markup.
 
-[[table-static-sites-we-like]]
+[[table-ssg-showcases]]
 .Statically generated sites we like
 [cols="6*",uframe="none", grid="none", options="header"]
 |===
