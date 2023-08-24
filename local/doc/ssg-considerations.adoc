@@ -67,15 +67,16 @@ endif::[]
 === Options Considered
 The following toolchains are being considered:
 
-[cols="1,1,1,1,1,1", frame="none", grid="none"]
+[cols="1,1,1,1,1,1,1,1", frame="none", grid="none"]
 |===
-a|* RST/Sphinx
-a|* RST/mkdocs
+a|* ADOC/Antora
+a|* ADOC/docToolchain
+a|* MD/Hugo
+a|* MD/mkdocs
 a|* MDX/Gatsby.sh
 a|* MDX/Docusaurus
-a|* ADOC/docToolchain
-a|* ADOC/Antora
-a|* MD/Hugo
+a|* RST/mkdocs
+a|* RST/Sphinx
 |===
 
 Ultimately, a docker image will be created for running the SSG.  In the meantime, the manual steps are listed below.  Once we have a suitable docker image, the Dockerfile will suffice as the setup procedcure for getting the SSG to run.  Those steps are defined in the following subsections.
