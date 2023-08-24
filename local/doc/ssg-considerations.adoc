@@ -265,7 +265,7 @@ https://nanoc.app/about
 |Openshift
 |https://docs.openshift.com
 |asciidoc
-|AcciiBinder
+|AsciiBinder
 |
 |Dormant
 
