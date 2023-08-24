@@ -73,6 +73,7 @@ a|* ADOC/Antora
 a|* ADOC/docToolchain
 a|* MD/Hugo
 a|* MD/mkdocs
+
 a|* MDX/Gatsby.sh
 a|* MDX/Docusaurus
 a|* RST/mkdocs
