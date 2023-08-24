@@ -135,20 +135,24 @@ file:///usr/share/doc/terminator/html/index.html
 |
 |Hot
 
-|ReactJS Docs
+|ReactJS Docs +
+OpenFDA +
+Algolia
 |https://reactjs.org/docs/getting-started.html +
-https://docsearch.algolia.com/docs/what-is-docsearch
+https://docsearch.algolia.com/docs/what-is-docsearch +
+https://open.fda.gov
 |MDX
 |Gatsby.js
 |
 |Hot
 
-|Docusaurus
+|Docusaurus +
+ReactNative
 |https://jestjs.io/docs/getting-started +
-https://open.fda.gov/
+https://reactnative.dev/docs/getting-started
 |Markdown
 |Docusaurus (Facebook)
-|
+|*(7)*
 |Hot
 
 |docToolchain +
@@ -280,6 +284,8 @@ WARNING: *(4)* readthedocs.io warns against using Markdown syntax in favor of RS
 NOTE: *(5)* This may be the most impressive set of docs I've seen, from the perspective of single-source component reuse.  That said, I think this would be more suitable for a fortune-500 company that is willing to support a tech writing department hat can commit to writing in an obscure source format.  DITA is an XML format, and for the pleasant writing experience, this requires  COTS XML editors like OxygenXML, or something like Adobe Framemaker.  The experience is superior to other approaches in how it allows an author to control perspective and scope of documentation, while maintaing creative control of layout, but again -- overkill for what we are trying to do at the project level.  CommonMark can be used as the source, but it requires constant transforming to DITA to stay useful.
 
 NOTE: *(6)* Nanoc should get an honorable mention here, despite it being labeled as _dormant_.  Rationale: It is used by some heavy hitters, namely: GitLab and Prometheus.
+
+NOTE: *(7)* Facebook is not completely dogfooding _Docusaurus_.  It appears they are using a combindation of _Docusaurus_ and _Gadsby.js_.
 
 
 
