@@ -65,9 +65,9 @@ ifdef::env-gitlab[]
 endif::[]
 
 === Options Considered
-The following toolchains are being considered:
+The following toolchains have been considered:
 
-[cols="1,1,1,1,1,1,1,1", frame="none", grid="none"]
+[cols="1,1,1,1", frame="none", grid="none"]
 |===
 a|* ADOC/Antora
 a|* ADOC/docToolchain
