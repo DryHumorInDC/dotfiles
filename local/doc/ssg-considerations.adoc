@@ -139,14 +139,16 @@ Django +
 Python +
 cmake +
 kernel.org +
-offline help docs in Gnome
+offline help docs in Gnome +
+nginx docs
 |https://docs.ansible.com/ansible/latest/index.html +
 https://docs.djangoproject.com +
 https://pythondotorg.readthedocs.io +
 https://docs.python.org/3/ +
 https://kernel.org +
 https://cmake.org +
-file:///usr/share/doc/terminator/html/index.html
+file:///usr/share/doc/terminator/html/index.html +
+https://docs.nginx.com/nginx/
 |RST
 |Sphinx
 |
